@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { FiShoppingBag } from 'react-icons/fi';
 
-// import { Container } from './styles';
+import { ProductList } from './styles';
 
 export default class Home extends Component {
   render() {
