@@ -9,9 +9,9 @@ import Header from './components/Header';
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes />
       <GlobalStyle />
-      <Header />
     </BrowserRouter>
   );
 }
