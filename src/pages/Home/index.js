@@ -18,7 +18,7 @@ export default class Home extends Component {
 
           <button type="button">
             <div>
-              <FiShoppingBag size={36} color="#FFF" />
+              <FiShoppingBag size={24} color="#FFF" />
             </div>
 
             <span>ADICIONAR NA SACOLA</span>
@@ -34,7 +34,7 @@ export default class Home extends Component {
 
           <button type="button">
             <div>
-              <FiShoppingBag size={36} color="#FFF" />
+              <FiShoppingBag size={24} color="#FFF" />
             </div>
 
             <span>ADICIONAR NA SACOLA</span>
@@ -50,7 +50,7 @@ export default class Home extends Component {
 
           <button type="button">
             <div>
-              <FiShoppingBag size={36} color="#FFF" />
+              <FiShoppingBag size={24} color="#FFF" />
             </div>
 
             <span>ADICIONAR NA SACOLA</span>
