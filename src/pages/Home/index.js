@@ -6,6 +6,8 @@ import { ProductList } from './styles';
 
 import api from '../../services/api';
 
+import { formatPrice } from '../../util/format';
+
 export default class Home extends Component {
   state = {
     products: [],
@@ -14,7 +16,12 @@ export default class Home extends Component {
   async componentDidMount() {
     const response = await api.get('http://localhost:3333/products');
 
-    this.setState({ products: response.data });
+    const data = response.data.map((product) => ({
+      ...product,
+      priceFormatted: formatPrice(product.price),
+    }));
+
+    this.setState({ products: data });
   }
 
   render() {
@@ -26,15 +33,16 @@ export default class Home extends Component {
           <li key={product.id}>
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
-            <span>{product.price}</span>
-
-            <button type="button">
-              <div>
-                <FiShoppingBag size={24} color="#FFF" />
-              </div>
-
-              <span>ADICIONAR NA SACOLA</span>
-            </button>
+            <div>
+              <button type="button">
+                <div>
+                  <span>{product.priceFormatted}</span>
+                </div>
+                <span>
+                  COMPRAR <FiShoppingBag size={20} color="#FFF" />
+                </span>
+              </button>
+            </div>
           </li>
         ))}
       </ProductList>

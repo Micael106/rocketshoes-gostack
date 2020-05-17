@@ -21,49 +21,61 @@ export const ProductList = styled.ul`
     }
 
     > strong {
-      font-size: 16px;
-      line-height: 20px;
-      margin-top: 20px;
-      color: #333;
+      font-size: 13px;
+      line-height: 15px;
+      color: #666;
+      text-transform: lowercase;
+      margin-bottom: 10px;
     }
 
-    > span {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 5px 0 20px;
-    }
-
-    button {
-      background: #7159c1;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      overflow: hidden;
+    > div {
       margin-top: auto;
-
       display: flex;
-      align-items: center;
-      transition: background 0.2s;
+      flex-direction: column;
 
-      &:hover {
-        background: ${darken(0.1, '#7159c1')};
-      }
+      button {
+        background: #7159c1;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        overflow: hidden;
+        margin-top: auto;
 
-      div {
         display: flex;
         align-items: center;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.25);
+        transition: background 0.2s;
 
-        svg {
-          margin-right: 5px;
+        &:hover {
+          background: ${darken(0.1, '#7159c1')};
         }
-      }
 
-      span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px;
+          background: rgba(0, 0, 0, 0.25);
+
+          span {
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+
+        span {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-weight: bold;
+
+          svg {
+            margin-left: 15px;
+          }
+        }
       }
     }
   }
