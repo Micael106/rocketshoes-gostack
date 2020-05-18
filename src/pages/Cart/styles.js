@@ -61,14 +61,17 @@ export const ProductTable = styled.table`
   div {
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    input {
-      border: 2px solid #7159c1;
+    > span {
       border-radius: 4px;
-      color: #666;
+      color: #333;
+      margin: 0;
       padding: 6px;
-      width: 35px;
+      width: auto;
+      height: auto;
       text-align: center;
+      font-size: 13px;
     }
   }
 

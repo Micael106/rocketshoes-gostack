@@ -30,7 +30,7 @@ function Cart({ cart }) {
                   <button type="button">
                     <FiMinusCircle size={20} color="#7159c1" />
                   </button>
-                  <input type="number" readOnly value={2} />
+                  <span>2</span>
                   <button type="button">
                     <FiPlusCircle size={20} color="#7159c1" />
                   </button>
