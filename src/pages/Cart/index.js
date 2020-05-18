@@ -3,8 +3,14 @@ import { connect } from 'react-redux';
 import { FiMinusCircle, FiPlusCircle, FiTrash } from 'react-icons/fi';
 import { Container, ProductTable, ProductTotal } from './styles';
 
-function Cart({ cart }) {
-  console.tron.log(cart);
+function Cart({ dispatch, cart }) {
+  const removeFromCart = (productId) => {
+    dispatch({
+      type: 'REMOVE_FROM_CART',
+      productId,
+    });
+  };
+
   return (
     <Container>
       <ProductTable>
@@ -40,7 +46,10 @@ function Cart({ cart }) {
                 <strong>R$259,90</strong>
               </td>
               <td>
-                <button type="button">
+                <button
+                  type="button"
+                  onClick={() => removeFromCart(product.id)}
+                >
                   <FiTrash size={20} color="#7159c1" />
                 </button>
               </td>
