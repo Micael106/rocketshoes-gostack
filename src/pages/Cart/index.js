@@ -30,7 +30,7 @@ function Cart({ cart }) {
                   <button type="button">
                     <FiMinusCircle size={20} color="#7159c1" />
                   </button>
-                  <span>2</span>
+                  <span>{product.amount}</span>
                   <button type="button">
                     <FiPlusCircle size={20} color="#7159c1" />
                   </button>
