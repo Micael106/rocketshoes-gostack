@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import { FiMinusCircle, FiPlusCircle, FiTrash } from 'react-icons/fi';
 import { Container, ProductTable, ProductTotal } from './styles';
 
-export default class Cart extends Component {
-  render() {
-    return (
-      <Container>
-        <ProductTable>
-          <thead>
-            <th />
-            <th>PRODUTO</th>
-            <th>QUANTIDADE</th>
-            <th>SUBTOTAL</th>
-            <th />
-          </thead>
-          <tbody>
+function Cart({ cart }) {
+  console.tron.log(cart);
+  return (
+    <Container>
+      <ProductTable>
+        <thead>
+          <th> </th>
+          <th>PRODUTO</th>
+          <th>QUANTIDADE</th>
+          <th>SUBTOTAL</th>
+          <th> </th>
+        </thead>
+        <tbody>
+          {cart.map((product) => (
             <tr>
               <td>
-                <img
-                  src="https://cdn.awsli.com.br/800x800/1060/1060828/produto/42168015/1ae3f14322.jpg"
-                  alt="Tênis"
-                />
+                <img src={product.image} alt={product.title} />
               </td>
               <td>
-                <strong>Tênis Mizuno Dourado Luxo</strong>
-                <span>R$599,90</span>
+                <strong>{product.title}</strong>
+                <span>{product.priceFormatted}</span>
               </td>
               <td>
                 <div>
@@ -46,18 +45,24 @@ export default class Cart extends Component {
                 </button>
               </td>
             </tr>
-          </tbody>
-        </ProductTable>
+          ))}
+        </tbody>
+      </ProductTable>
 
-        <footer>
-          <button type="button">Finalizar Pedido</button>
+      <footer>
+        <button type="button">Finalizar Pedido</button>
 
-          <ProductTotal>
-            <span>TOTAL</span>
-            <strong>R$259,90</strong>
-          </ProductTotal>
-        </footer>
-      </Container>
-    );
-  }
+        <ProductTotal>
+          <span>TOTAL</span>
+          <strong>R$259,90</strong>
+        </ProductTotal>
+      </footer>
+    </Container>
+  );
 }
+
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Cart);
