@@ -44,7 +44,10 @@ class Home extends Component {
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
             <div>
-              <button type="button" onClick={() => this.addProductToCart()}>
+              <button
+                type="button"
+                onClick={() => this.addProductToCart(product)}
+              >
                 <div>
                   <span>{product.priceFormatted}</span>
                 </div>
